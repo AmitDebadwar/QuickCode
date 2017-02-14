@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+   <script type="text/javascript">
+   
+   function functionInHeading(obj){
+    console.log("###############  "+(obj.callee.name || '--' )+"  ##################");
+    console.log("Called By:", obj.callee.caller && obj.callee.caller.name);
+    console.log("################################################################");
+   }
+   
+   function simpleLog(obj){
+    console.log("###########################################");
+    console.log("Current Function: ",obj.callee.name || '--');
+	console.log("Called By:", obj.callee.caller && obj.callee.caller.name);
+    console.log("###########################################");
+   }
+   
+   
+   
+   
+   function log(obj){
+    functionInHeading(obj);
+   }
+  
+  function two(){
+  
+  }
+  
+  function first(){
+   log(arguments);
+  
+  }
+  
+  function start(){
+
+  log(arguments);
+  first();
+  }
+  
+  
+  start();
+  
+  </script>
+</head>
+
+<body>
+  
+</body>
+</html>
