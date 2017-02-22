@@ -1,0 +1,52 @@
+1) Adding a foreign key in table
+
+CREATE TABLE [dbo].[BankInfo](
+	[Id] [int] identity(1,1) primary key,
+	[BankName] [nvarchar](200) NULL,
+	[Branch] [nvarchar](200) NULL,
+	[AccountNo] [nvarchar](50) NULL,
+	[IFSC_CODE] [nvarchar](50) NULL,
+	[MICR_CODE] [nvarchar](50) NULL,
+	[BANK_ADDRESS] [nvarchar](500) NULL,
+	[BANK_CONTACT_NO] [nvarchar](100) NULL,
+	[PersonalInfoID][int] FOREIGN KEY REFERENCES [dbo].[PersonalInformation](Pid)
+) ON [PRIMARY]
+
+GO
+===========================================================================================================================================
+2) Adding primary key in table 
+
+USE [MDK_DB]
+GO
+
+/****** Object:  Table [dbo].[ParsnalInfo]    Script Date: 02/24/2016 05:42:53 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PersonalInformation](
+	[Pid] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](50) NULL,
+	[MiddleName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NULL,
+	[Address] [nvarchar](1000) NULL,
+	[ContactNo] [nvarchar](20) NULL,
+	[AlternateNo][nvarchar](20),
+	[EmailID] [nvarchar](200) NULL,
+	[DateOfBirth] [nvarchar](100) NULL,
+	[BusinessName][nvarchar](100)NULL,
+	[BusinessType][nvarchar](20)NULL,
+	[BusinessGUID][nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Personal_Info] PRIMARY KEY CLUSTERED 
+(
+	[Pid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+========================================================================================================================================
+
+
+===========================================================================================================================================
