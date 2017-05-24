@@ -1,0 +1,5 @@
+1) Temporary set path of tomcat apache
+
+      set JAVA_HOME="C:\Program Files\Java\jdk1.8.0_121" 
+      set CATALINA_HOME="C:\mySoft\apache-tomcat-7.0.65"
+      set PATH=%PATH%;%JAVA_HOME%\bin;%CATALINA_HOME%\bin
