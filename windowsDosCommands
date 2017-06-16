@@ -1,5 +1,14 @@
-1) Remove bin/obj file
+	1) Remove bin/obj file
 	for /d /r . %d in (bin,obj) do @if exist "%d" rd /s/q "%d"
 	
 	2) Remove empty directories
 	for /f "delims=" %d in ('dir /s /b /ad ^| sort /r') do rd "%d"
+
+
+	3) with file that contains non essential file list.
+	for /f %i in (non-essential-files.txt) do del %i /F /S /Q
+	rd .git /s /q
+	rd e2e /s /q
+	
+	4) remove .git directory
+	rd .git /S/Q
